@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Here ConstraintLayout is preferred since layout contains slightly complex layout of
+     including TextViews. Constraint layout flattens the Hierarchy and hence
+     it is chosen over LinearLayout-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        tools:context=".screens.shoelist.ShoeListFragment">
+
+
+        <ScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Here LinearLayout is preferred since layout needs to align views one after another
+            in a linear way and also can be achieved with flat hierarchy since UI is not too complex-->
+
+            <LinearLayout
+                android:id="@+id/shoe_container"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/add_new_shoes"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:rippleColor="@color/colorAccent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

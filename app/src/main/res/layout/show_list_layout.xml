@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+    </data>
+
+    <!-- Here LinearLayout is preferred since layout needs to align views one after another
+            in a linear way and also can be achieved with flat hierarchy since UI is not too complex-->
+    <LinearLayout
+        android:id="@+id/shoe_container"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="@dimen/card_margin">
+            <!-- Here ConstraintLayout is preferred since layout contains slightly complex layout of
+            including TextViews and Buttons. Constraint layout flattens the Hierarchy and hence
+            it is chosen over LinearLayout-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/inner_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/shoe_image"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/todo"
+                    android:padding="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/running_shoe" />
+
+                <TextView
+                    android:id="@+id/shoe_name_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="@{shoe.name}"
+                    app:layout_constraintBottom_toTopOf="@+id/company_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toEndOf="@+id/shoe_image"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="spread" />
+
+                <TextView
+                    android:id="@+id/description_text"
+                    style="@style/Widget.AppCompat.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{shoe.description}"
+                    app:layout_constraintBottom_toTopOf="@+id/size_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toEndOf="@+id/shoe_image"
+                    app:layout_constraintTop_toBottomOf="@+id/company_text" />
+
+                <TextView
+                    android:id="@+id/size_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{``+shoe.size}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toEndOf="@+id/shoe_image"
+                    app:layout_constraintTop_toBottomOf="@+id/description_text" />
+
+                <TextView
+                    android:id="@+id/company_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:includeFontPadding="false"
+                    android:text="@{shoe.company}"
+                    app:layout_constraintBottom_toTopOf="@+id/description_text"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.2"
+                    app:layout_constraintStart_toEndOf="@+id/shoe_image"
+                    app:layout_constraintTop_toBottomOf="@+id/shoe_name_text" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>
+

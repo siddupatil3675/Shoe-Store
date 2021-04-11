@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Here ConstraintLayout is preferred since layout contains slightly complex layout
+     including TextViews and Buttons and Image logo. Constraint layout flattens the Hierarchy and hence
+     it is chosen over LinearLayout-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        tools:context=".screens.login.LoginFragment">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginTextInputLayout"
+            style="@style/TextInputLayout_StyleBox"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/username_text" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/loginTextPasswordLayout"
+            style="@style/TextInputLayout_StyleBox"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginTextInputLayout"
+            app:layout_constraintVertical_bias="0.05">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password_hint" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/login_button"
+            style="@style/Material_Button_Style"
+            android:text="Login"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginTextPasswordLayout"
+            app:layout_constraintVertical_bias="0.12"
+            app:rippleColor="@android:color/white" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/different_user_button"
+            style="@style/Material_Button_Style"
+            android:text="@string/use_another_account_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_button"
+            app:layout_constraintVertical_bias="0.12"
+            app:rippleColor="@android:color/white" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            app:layout_constraintBottom_toTopOf="@+id/loginTextInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/running_shoe" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="email_hint">\@gmail.com</string>
+    <string name="password_text">Password</string>
+    <string name="password_edit">password</string>
+    <string name="login_button">New Login</string>
+    <string name="existing_user_button">Existing User</string>
+    <string name="shoe_title_text">This is an unique Shoe inventory to keep track of everything about shoes.</string>
+    <string name="welcome_text">Hi and Welcome to \nShoe Store</string>
+    <string name="instructions">Read Instructions</string>
+    <string name="instructions_text">This is to keep track of shoes in the Inventory. Feel free to add new Shoes to the list and enjoy tracking them</string>
+    <string name="shoe_list_button">Shoe List</string>
+    <string name="logout">Logout</string>
+    <string name="password_hint">Password</string>
+    <string name="username_text">UserName</string>
+    <string name="use_another_account_text">Use another account</string>
+    <string name="title_details_text">Add new shoes with below details</string>
+    <string name="shoe_name_text">Shoe Name</string>
+    <string name="shoe_name_hint">shoe name</string>
+    <string name="company_text">Company</string>
+    <string name="size_hint">size</string>
+    <string name="description_text">Description</string>
+    <string name="description_hint">description</string>
+    <string name="company_name_hint">company name</string>
+    <string name="cancel_btn">Cancel</string>
+    <string name="save_btn">Save</string>
+    <string name="size">Size</string>
+    <string name="todo">TODO</string>
+    <string name="welcome_screen_label">WELCOME</string>
+    <string name="instructions_screen_label">INSTRUCTIONS</string>
+    <string name="shoe_list_screen_label">SHOE STOCK</string>
+    <string name="details_screen_label">ADD TO STOCK</string>
+    <string name="add_new_shoes">add new shoes</string>
+</resources>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Here ConstraintLayout is preferred since layout contains slightly complex layout of
+     including TextViews and Buttons. Constraint layout flattens the Hierarchy and hence
+     it is chosen over LinearLayout-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screens.instruction.InstructionsFragment">
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:text="@string/instructions"
+            style="@style/DashBoard_TextView_Style"
+            app:layout_constraintBottom_toTopOf="@+id/summary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/summary_text"
+            android:text="@string/instructions_text"
+            style="@style/DashBoard_Description_Style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/shoe_list_button"
+            style="@style/Material_Button_Style"
+            android:text="@string/shoe_list_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
